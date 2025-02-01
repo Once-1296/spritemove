@@ -1,0 +1,69 @@
+#include<iostream>
+#include<fstream>
+#include<SFML\Audio.hpp>
+#include<SFML\Window.hpp>
+#include<SFML\System.hpp>
+#include<SFML\Graphics.hpp>
+#include<SFML\Network.hpp>
+using namespace std;
+void func()
+{
+	sf::Image img, u, d, l, r, u1, u2, d1, d2, l1, l2, r1, r2;
+	img.loadFromFile("allsprites.png");
+	//fu.open("up.png", ios::out);
+	//fu.close();
+	d.create(150, 165, sf::Color::Black);
+	sf::IntRect rect = { 0,170,150,165 };
+	d.copy(img, 0, 0, rect);
+	d.saveToFile("down.png");
+	u.create(150, 165);
+	rect = { 158,170,150,165 };
+	u.copy(img, 0, 0, rect);
+	u.saveToFile("up.png");
+	l.create(150, 165, sf::Color::Black);
+	rect = { 316,170,150,165 };
+	l.copy(img, 0, 0, rect);
+	l.saveToFile("left.png");
+	r.create(150, 165);
+	rect = { 316,170,150,165 };
+	r.copy(img, 0, 0, rect);
+	r.flipHorizontally();
+	r.saveToFile("right.png");
+	d1.create(150, 165, sf::Color::Black);
+	rect = { 474,170,150,165 };
+	d1.copy(img, 0, 0, rect);
+	d1.saveToFile("down2.png");
+	d1.flipHorizontally();
+	d1.saveToFile("down1.png");
+	u1.create(150, 165);
+	rect = { 632,170,150,165 };
+	u1.copy(img, 0, 0, rect);
+	u1.saveToFile("up2.png");
+	u1.flipHorizontally();
+	u1.saveToFile("up1.png");
+	l1.create(150, 165, sf::Color::Black);
+	rect = { 790,170,150,165 };
+	l1.copy(img, 0, 0, rect);
+	l1.saveToFile("left2.png");
+	l1.flipHorizontally();
+	l1.saveToFile("right2.png");
+	l2.create(150, 120);
+	rect = { 790,170,150,120 };
+	l2.copy(img, 0, 0, rect);
+	r2.create(150, 45);
+	rect = { 790,290,150,45 };
+	r2.copy(img, 0, 0, rect);
+	r1.create(150, 165);
+	sf::IntRect t1 = { 0,0,150,120 }, t2 = { 0,0,150,45 };
+	r1.copy(l2, 0, 0, t1);
+	r2.flipHorizontally();
+	r1.copy(r2, 0, 120, t2);
+	r1.saveToFile("left1.png");
+	l2.flipHorizontally();
+	//r2.flipHorizontally();
+	r1.copy(l2, 0, 0, t1);
+	r1.saveToFile("right1.png");
+	r2.saveToFile("chk1.png");
+	l2.saveToFile("chk2.png");
+	return;
+}
